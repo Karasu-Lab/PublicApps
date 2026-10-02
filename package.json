@@ -4,9 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "ready": "vp check"
+    "ready": "vp check",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint"
   },
   "devDependencies": {
+    "turbo": "catalog:",
     "vite-plus": "catalog:"
   },
   "devEngines": {
