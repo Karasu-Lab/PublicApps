@@ -1,7 +1,10 @@
 import { Elysia } from "elysia";
+import { CloudflareAdapter } from "elysia/adapter/cloudflare-worker";
+import { fileRoutes } from "./routes/files";
+import { signingRoutes } from "./routes/signing";
 
-const app = new Elysia().get("/", () => "Hello Elysia").listen(process.env.PORT ?? 3001);
-
-console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
-);
+export default new Elysia({ adapter: CloudflareAdapter })
+  .get("/", () => "Hello Elysia")
+  .use(signingRoutes)
+  .use(fileRoutes)
+  .compile();
