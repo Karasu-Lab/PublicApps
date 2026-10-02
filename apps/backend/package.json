@@ -1,0 +1,16 @@
+{
+  "name": "publicapps-backend",
+  "version": "1.0.50",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "build": "bun build src/index.ts --target bun --outdir dist"
+  },
+  "module": "src/index.js",
+  "private": true,
+  "dependencies": {
+    "elysia": "catalog:"
+  },
+  "devDependencies": {
+    "bun-types": "catalog:"
+  }
+}
